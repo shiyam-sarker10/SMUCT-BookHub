@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import logo from "../../../assets/SMUCT-Logo.png";
 import { NavLink } from "react-router-dom";
+import Button from "../Buttons/Button";
 
 const Nav = () => {
-
-  const navList = ["All Books", "Add Books","All Authors"].sort();
-  const [isOpen, setIsOpen] = useState(true)
+  const navList = ["Home","All Books", "All Authors", "Add Books"];
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
-      <div className="flex justify-between items-center max-w-[1366px] mx-auto shadow-md px-4 md:px-8 lg:px-12 py-4 z-50">
+      <div className="flex justify-between items-center max-w-[1366px] mx-auto  shadow-md px-4 md:px-8 lg:px-12 py-4 z-50">
         {/* logo  */}
         <div className=" flex-wrap items-center gap-2 hidden md:flex">
           <img className="w-[100px]" src={logo} alt="" />
@@ -21,10 +21,7 @@ const Nav = () => {
           {/* toggle menu button */}
           <div className="block md:hidden z-50 relative">
             {isOpen ? (
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className=" rounded-lg"
-              >
+              <button onClick={() => setIsOpen(!isOpen)} className="rounded-lg">
                 <svg
                   width={45}
                   viewBox="0 0 24 24"
@@ -74,19 +71,21 @@ const Nav = () => {
               </button>
             )}
           </div>
-
+          {/* small device navItems  */}
           <div
-            className={`flex flex-col justify-center items-center bg-purple-100 mt-20 absolute inset-0 space-y-6  z-10 transition-all duration-700 md:hidden ${
-              isOpen ? " opacity-100" : " opacity-0 scale-0"
+            className={`flex flex-col justify-center items-center bg-purple-100 mt-20 absolute inset-0 space-y-6  z-10 transition-all duration-500 md:hidden ${
+              isOpen ? " opacity-100" : "opacity-0 scale-0"
             }`}
           >
-            {/* small device navItems  */}
-
             {navList?.map((item, idx) => (
               <NavLink
                 onClick={() => setIsOpen(false)}
                 key={idx}
-                to={`/${item.toLowerCase()}`}
+                to={
+                  item.toLowerCase() === "home"
+                    ? "/"
+                    : `/${encodeURIComponent(item.toLowerCase())}`
+                }
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
@@ -99,18 +98,22 @@ const Nav = () => {
               </NavLink>
             ))}
           </div>
-          <div className="md:flex flex-row items-center space-x-4 md:space-y-0 z-10 transition-all duration-300 hidden">
-            {/* md & lg navItems  */}
+          {/* md & lg navItems  */}
+          <div className="md:flex flex-row items-center md:space-y-0 z-10 transition-all duration-300 hidden">
             {navList?.map((item, idx) => (
               <div key={idx} className="hidden md:block">
                 <NavLink
-                  to={`/${item.toLowerCase()}`}
+                  to={
+                    item.toLowerCase() === "home"
+                      ? "/"
+                      : `/${encodeURIComponent(item.toLowerCase())}`
+                  }
                   className={({ isActive, isPending }) =>
                     isPending
                       ? "pending"
                       : isActive
-                      ? "bg-[#201F5E] text-white px-4 py-2 shadow-md transition-all rounded-md"
-                      : "text-[#201F5E]"
+                      ? "bg-[#201F5E] text-white px-4 py-2 shadow-lg transition-all rounded-md font-medium"
+                      : "text-[#201F5E] font-medium px-4 py-2"
                   }
                 >
                   {item}
@@ -120,8 +123,8 @@ const Nav = () => {
           </div>
         </div>
         {/* register  */}
-        <div className=" bg-[#201F5E] text-white px-4 py-2 rounded-md">
-          register
+        <div >
+          <Button title="Register"></Button>
         </div>
       </div>
     </div>
