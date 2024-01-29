@@ -1,8 +1,25 @@
-# React + Vite
+# SMUCT-BookHub 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ Book hub is a project primarily based on a library system.Where People can Search for Books and see Book information like a library.
+Technologies used  : 
 
-Currently, two official plugins are available:
+Front-End -:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React (For Building User Interface)
+- Tailwind (For Styling Components)
+
+Back-End -:
+
+- Firebase (For Authentication like login & register)
+- ExpressJs (for Api building)
+- MongoDB ( For DataBase)
+
+
+
+Feature: 
+
+- Users can Add New books 
+- User can search Books by -[bookName, Author Name , CategoryName]
+- Users can see the details of a book like author name, book name, book published date, etc information
+
+More Feature may include un future
