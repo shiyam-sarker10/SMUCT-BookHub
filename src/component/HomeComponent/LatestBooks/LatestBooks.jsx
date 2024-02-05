@@ -132,8 +132,8 @@ console.log(bookDetails);
               <Lcard key={idx} book={book}></Lcard>
             ))}
           </div>
-          <div className="absolute left-0 w-[150px] h-full bg-gradient-to-r from-white via-white/40  to-transparent"></div>
-          <div className="absolute right-0 w-[150px] h-full bg-gradient-to-l from-white via-white/40  to-transparent"></div>
+          <div className="absolute left-0 w-[50px] h-full bg-gradient-to-r from-white via-white/40  to-transparent"></div>
+          <div className="absolute right-0 w-[50px] h-full bg-gradient-to-l from-white via-white/40  to-transparent"></div>
         </div>
       </div>
     );
