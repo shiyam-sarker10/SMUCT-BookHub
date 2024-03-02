@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import logo from "../../../assets/SMUCT-Logo.png";
 import { NavLink } from "react-router-dom";
 import Button from "../Buttons/Button";
+import useAuth from "../../../hooks/useAuth";
 
 const Nav = () => {
   const navList = ["Home","All Books", "All Authors", "Add Books"];
   const [isOpen, setIsOpen] = useState(false);
+
+  const {user} = useAuth()
+  console.log(user)
   return (
     <div>
       <div className="flex justify-between items-center max-w-[1366px] mx-auto  shadow-md px-4 md:px-8 lg:px-12 py-4 z-50">
@@ -123,8 +127,16 @@ const Nav = () => {
           </div>
         </div>
         {/* register  */}
-        <div >
-          <Button title="Register"></Button>
+        <div>
+          {user ? (
+            <img
+              className="size-[60px] rounded-full object-cover border border-[#201F5E]"
+              src={user?.photoURL}
+              alt="profile"
+            />
+          ) : (
+            <Button title="Register"></Button>
+          )}
         </div>
       </div>
     </div>
