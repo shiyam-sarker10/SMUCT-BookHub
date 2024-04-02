@@ -1,6 +1,6 @@
 .marquee {
 
-  animation: marqueeEffect 30s  linear infinite ;
+  animation: marqueeEffect 10s  linear infinite ;
 }
 @keyframes marqueeEffect {
   to{
