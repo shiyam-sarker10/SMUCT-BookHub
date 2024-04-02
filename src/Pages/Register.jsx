@@ -60,7 +60,7 @@ const Register = () => {
             <div className="flex flex-col items-center justify-center w-[500px] py-8 mx-auto md:h-screen lg:py-0">
               <div className="w-full rounded-lg shadow-lg dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                 <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-                  <h1 className="text-xl font-bold leading-tight tracking-wider font-custom text-blue-400 md:text-2xl dark:text-white">
+                  <h1 className="text-xl font-bold leading-tight tracking-wider font-custom text-[#201F5E] md:text-2xl dark:text-white">
                     Create your own account
                   </h1>
                   <form
@@ -76,7 +76,7 @@ const Register = () => {
                         type="text"
                         name="name"
                         id="name"
-                        className=" focus:text-blue-400 focus:outline-blue-400 bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        className=" focus:text-[#201F5E] focus:outline-[#201F5E] bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="name"
                         required=""
                       />
@@ -89,7 +89,7 @@ const Register = () => {
                         type="text"
                         name="photo"
                         id="photo"
-                        className=" focus:text-blue-400 focus:outline-blue-400 bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        className=" focus:text-[#201F5E] focus:outline-[#201F5E] bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="url"
                         required=""
                       />
@@ -102,7 +102,7 @@ const Register = () => {
                         type="email"
                         name="email"
                         id="email"
-                        className=" focus:text-blue-400 focus:outline-blue-400 bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        className=" focus:text-[#201F5E] focus:outline-[#201F5E] bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="name@company.com"
                         required=""
                       />
@@ -116,7 +116,7 @@ const Register = () => {
                         name="password"
                         id="password"
                         placeholder="••••••••"
-                        className=" focus:text-blue-400 focus:outline-blue-400 bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        className=" focus:text-[#201F5E] focus:outline-[#201F5E] bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required=""
                       />
                     </div>
@@ -127,7 +127,7 @@ const Register = () => {
                             id="remember"
                             aria-describedby="remember"
                             type="checkbox"
-                            className=" form-checkbox  text-blue-400 w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                            className=" form-checkbox  text-[#201F5E] w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
                             required=""
                           />
                         </div>
@@ -146,7 +146,7 @@ const Register = () => {
                     </div>
                     <div className="flex justify-center items-center ">
                       <input
-                        className="px-6 w-full py-2 rounded-lg font-thin active:bg-blue-400/80 bg-blue-400 text-white font-title "
+                        className="px-6 w-full py-2 rounded-lg font-thin active:bg-[#201F5E]/80 bg-[#201F5E] text-white font-title "
                         type="submit"
                         value="Submit"
                       />

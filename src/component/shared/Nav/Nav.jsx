@@ -1,18 +1,28 @@
 import React, { useState } from "react";
 import logo from "../../../assets/SMUCT-Logo.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Button from "../Buttons/Button";
 import useAuth from "../../../hooks/useAuth";
 
 const Nav = () => {
-  const navList = ["Home","All Books", "All Authors", "Add Books"];
+  const navList = ["Home","All Books", "Add Books"];
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen,setIsModalOpen] = useState(false)
 
-  const {user} = useAuth()
+  const { user, LogOut } = useAuth();
   console.log(user)
+  const logout = () => {
+    LogOut()
+    .then((res)=>{
+
+    })
+    .catch((error) => {
+
+    })
+  }
   return (
-    <div>
-      <div className="flex justify-between items-center max-w-[1366px] mx-auto  shadow-md px-4 md:px-8 lg:px-12 py-4 z-50">
+    <div className="shadow-md">
+      <div className="flex justify-between items-center max-w-[1366px] mx-auto   px-4 md:px-8 lg:px-12 py-4 z-50">
         {/* logo  */}
         <div className=" flex-wrap items-center gap-2 hidden md:flex">
           <img className="w-[100px]" src={logo} alt="" />
@@ -129,13 +139,38 @@ const Nav = () => {
         {/* register  */}
         <div>
           {user ? (
-            <img
-              className="size-[60px] rounded-full object-cover border border-[#201F5E]"
-              src={user?.photoURL}
-              alt="profile"
-            />
+            <div className="relative">
+              <img
+                onClick={() => setIsModalOpen(!isModalOpen)}
+                className="size-[60px] rounded-full object-cover border border-[#201F5E]"
+                src={user?.photoURL}
+                alt="profile"
+              />
+              <div
+                className={`w-[220px] h-max  bg-white absolute -translate-x-1/2 rounded-lg shadow-md z-20 duration-300 ${
+                  isModalOpen
+                    ? "top-20 opacity-100 visible"
+                    : "top-16 opacity-0 invisible"
+                }`}
+              >
+                <div className="py-4 px-10 hover:bg-gray-50 font-medium text-slate-600">
+                  Dashboard
+                </div>
+                <div className="py-4 px-10 hover:bg-gray-50 font-medium text-slate-600">
+                  Profile
+                </div>
+                <div
+                  onClick={logout}
+                  className="py-4 px-10 hover:bg-gray-50 font-medium text-slate-600"
+                >
+                  Logout
+                </div>
+              </div>
+            </div>
           ) : (
-            <Button title="Register"></Button>
+            <Link to="/register">
+              <Button title="Register"></Button>
+            </Link>
           )}
         </div>
       </div>
